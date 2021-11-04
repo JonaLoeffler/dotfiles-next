@@ -5,8 +5,6 @@ source ~/.bash_aliases
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
-bindkey -v
-bindkey '^R' history-incremental-search-backward
 
 # file extractor
 ex ()
@@ -140,3 +138,6 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
+
+bindkey -v
+bindkey '^R' history-incremental-search-backward
