@@ -36,7 +36,9 @@ set scrolloff=8
 set completeopt=menuone,noinsert,noselect
 " set noshowmode
 
+set wildmenu
 set wildignore=*/node_modules/*,*/.git/*,*/vendor/*
+set path+=**
 
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/commands.vim

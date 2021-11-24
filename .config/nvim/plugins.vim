@@ -34,5 +34,5 @@ nnoremap <leader>n :NERDTree<CR>
 nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 
-"nnoremap <leader>gi :Git<CR>
-"nnoremap <leader>gp :Git push<CR>
+nnoremap <leader>git :Git<CR>
+nnoremap <leader>gp :Git push<CR>

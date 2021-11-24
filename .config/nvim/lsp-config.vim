@@ -3,6 +3,7 @@ local lsp = require'lspconfig'
 
 lsp.intelephense.setup{ }
 lsp.vuels.setup{ }
+lsp.pyright.setup{ }
 END
 
 " nnoremap <leader> gd :lua vim.lsp.buf.definition()<CR>
