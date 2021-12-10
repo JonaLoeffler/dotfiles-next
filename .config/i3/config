@@ -186,6 +186,9 @@ bindsym $mod+Shift+r restart
 # switch back to recent workspace
 workspace_auto_back_and_forth yes
 
+# floating windows
+for_window [title="Figure 1"] floating enable
+
 # --------------------------
 #  Modes
 # --------------------------

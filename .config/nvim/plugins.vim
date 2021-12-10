@@ -1,21 +1,27 @@
 " Plugins with vim-plug
 call plug#begin('~/.cache/nvim/plugins')
+" Autocomplete
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
 
+" Language-specific
 Plug 'jwalton512/vim-blade'
+Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 
+" Navigation
 Plug 'preservim/nerdtree'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mbbill/undotree'
 
+" Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+" Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'

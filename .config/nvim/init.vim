@@ -40,6 +40,7 @@ set wildmenu
 set wildignore=*/node_modules/*,*/.git/*,*/vendor/*
 set path+=**
 
+let mapleader = " "
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/commands.vim
 source ~/.config/nvim/lsp-config.vim
@@ -56,7 +57,6 @@ require'lualine'.setup{
 END
 
 " Remaps
-let mapleader = " "
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
