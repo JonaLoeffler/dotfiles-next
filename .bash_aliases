@@ -11,3 +11,5 @@ alias cls=clear
 
 alias weather="curl wttr.in/koblenz"
 alias wtr=weather
+
+alias "gittag"="git tag --sort v:refname"
