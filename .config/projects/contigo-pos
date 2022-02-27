@@ -1,0 +1,27 @@
+#!/bin/bash
+
+path="/home/jona/Code/contigo-pos"
+session="cpos"
+
+# Check if the session exists, discarding output
+# We can check $? for the exit status (zero for success, non-zero for failure)
+tmux has-session -t $session 2>/dev/null
+
+if [ $? != 0 ]
+then
+    tmux new-session -d -s $session -c $path
+
+    window=1
+    tmux rename-window -t $session:$window 'ddev'
+    tmux send-keys -t $session:$window 'ddev start' C-m 'ddev provision' C-m 'ddev ssh' C-m
+
+    window=2
+    tmux new-window -t $session:$window -c $path -n 'nvim'
+    tmux send-keys -t $session:$window 'nvim .' C-m
+
+    window=3
+    tmux new-window -t $session:$window -c $path -n 'npm'
+    tmux send-keys -t $session:$window 'sleep 30' C-m 'ddev exec npm run watch' C-m
+fi
+
+tmux attach-session -t $session:1
