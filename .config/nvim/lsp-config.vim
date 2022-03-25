@@ -8,15 +8,24 @@ lsp.r_language_server.setup{ }
 lsp.tsserver.setup{ }
 END
 
-" nnoremap <leader> gd :lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> ca <cmd>lua vim.lsp.buf.code_action()<CR>
-nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
-" nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-" nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-" nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
-nnoremap <leader> F <cmd>lua vim.lsp.buf.formatting*()<CR>
+nnoremap <silent> ca <cmd>lua vim.lsp.buf.code_action()<CR>
+nnoremap <silent> rr <cmd>lua vim.lsp.buf.rename()<CR>
+
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> <C-h> <cmd>lua vim.lsp.buf.signature_help()<CR>
+
+nnoremap <silent> ff <cmd>lua vim.lsp.buf.formatting()<CR>
+
+fun! LspLocationList()
+    lua vim.diagnostic.setloclist({open = false, severity = {min=vim.diagnostic.severity.HINT}})
+endfun
+
+augroup THE_PRIMEAGEN_LSP
+    autocmd!
+    autocmd! BufWrite,BufEnter,InsertLeave * :call LspLocationList()
+augroup END

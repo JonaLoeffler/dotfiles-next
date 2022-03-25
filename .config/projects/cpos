@@ -12,12 +12,12 @@ then
     tmux new-session -d -s $session -c $path
 
     window=1
-    tmux rename-window -t $session:$window 'ddev'
-    tmux send-keys -t $session:$window 'ddev start' C-m 'ddev provision' C-m 'ddev ssh' C-m
+    tmux rename-window -t $session:$window 'neovim'
+    tmux send-keys -t $session:$window 'nvim .' C-m
 
     window=2
-    tmux new-window -t $session:$window -c $path -n 'nvim'
-    tmux send-keys -t $session:$window 'nvim .' C-m
+    tmux new-window -t $session:$window -c $path -n 'ddev'
+    tmux send-keys -t $session:$window 'ddev start' C-m 'ddev provision' C-m 'ddev ssh' C-m
 
     window=3
     tmux new-window -t $session:$window -c $path -n 'npm'

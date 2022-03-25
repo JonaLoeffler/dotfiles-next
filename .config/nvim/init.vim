@@ -30,7 +30,7 @@ set undofile
 " line length indicator
 set signcolumn=yes
 set colorcolumn=120
-set textwidth=80
+set textwidth=120
 
 set scrolloff=8
 set completeopt=menuone,noinsert,noselect
@@ -43,8 +43,8 @@ set path+=**
 let mapleader = " "
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/commands.vim
+source ~/.config/nvim/navigation.vim
 source ~/.config/nvim/lsp-config.vim
-luafile ~/.config/nvim/compe-config.lua
 
 " Theme
 colorscheme dracula
@@ -56,17 +56,6 @@ require'lualine'.setup{
 }
 END
 
-" Remaps
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
-
-nnoremap <leader>co :copen<CR>
-nnoremap <leader>cc :cclose<CR>
-nnoremap <C-j> :cnext<CR>
-nnoremap <C-k> :cprev<CR>
 
 " format paragraphs (comments)
 nnoremap <leader>f gqip
-

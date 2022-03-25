@@ -3,6 +3,9 @@ call plug#begin('~/.cache/nvim/plugins')
 " Autocomplete
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
+
+Plug 'github/copilot.vim'
+
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
 
@@ -26,6 +29,9 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
+
+" Load Plugin settings
+luafile ~/.config/nvim/compe-config.lua
 
 " Plugin settings
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
