@@ -1,7 +1,10 @@
 lua << END
 local lsp = require'lspconfig'
 
-lsp.intelephense.setup{ }
+lsp.intelephense.setup{
+    init_options =  {
+        licenceKey = os.getenv('INTELEPHENSE_LICENSE_KEY'),
+}}
 lsp.vuels.setup{ }
 lsp.pyright.setup{ }
 lsp.r_language_server.setup{ }
@@ -19,7 +22,7 @@ nnoremap <silent> rr <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <C-h> <cmd>lua vim.lsp.buf.signature_help()<CR>
 
-nnoremap <silent> ff <cmd>lua vim.lsp.buf.formatting()<CR>
+nnoremap <C-i> <cmd>lua vim.lsp.buf.formatting()<CR>
 
 fun! LspLocationList()
     lua vim.diagnostic.setloclist({open = false, severity = {min=vim.diagnostic.severity.HINT}})

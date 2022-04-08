@@ -1,5 +1,6 @@
 source ~/.bash_profile
 source ~/.bash_aliases
+source ~/.config/keys
 
 # history search
 HISTSIZE=10000

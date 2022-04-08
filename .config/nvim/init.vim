@@ -55,7 +55,3 @@ require'lualine'.setup{
     }
 }
 END
-
-
-" format paragraphs (comments)
-nnoremap <leader>f gqip

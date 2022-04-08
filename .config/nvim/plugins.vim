@@ -43,6 +43,7 @@ let g:NERDTreeWinSize=30
 
 nnoremap <leader>e :NERDTreeFocus<CR>
 nnoremap <leader>n :NERDTree<CR>
+nnoremap <leader>nr :NERDTreeRefreshRoot<CR>
 nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 
