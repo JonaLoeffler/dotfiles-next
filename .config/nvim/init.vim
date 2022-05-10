@@ -55,3 +55,10 @@ require'lualine'.setup{
     }
 }
 END
+
+augroup FileTypeSpecificAutocommands
+    autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType vue setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType php setlocal tabstop=4 softtabstop=4 shiftwidth=4
+augroup END
