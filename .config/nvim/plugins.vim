@@ -34,7 +34,11 @@ call plug#end()
 luafile ~/.config/nvim/compe-config.lua
 
 " Plugin settings
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.git|\.gh|\.svn|venv|node_modules|vendor)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
+
 let g:netrw_browse_split=2
 let g:netrw_banner=0
 let g:netrw_winsize=25

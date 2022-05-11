@@ -1,7 +1,7 @@
 #!/bin/bash
 
 path="/home/jona/Uni"
-session="uni"
+session="mlrs"
 
 # Check if the session exists, discarding output
 # We can check $? for the exit status (zero for success, non-zero for failure)
@@ -16,12 +16,12 @@ then
     tmux send-keys -t $session:$window 'nvim . ' C-m
 
     window=2
-    tmux new-window -t $session:$window 'client'
+    tmux new-window -t $session:$window -c $path -n 'client'
     tmux send-keys -t $session:$window 'cd client; npm install; npm run start' C-m
 
     window=3
-    tmux new-window -t $session:$window 'server'
-    tmux send-keys -t $session:$window 'cd bpmn-recommender-server; ./run.sh' C-m
+    tmux new-window -t $session:$window -c $path -n 'server'
+    tmux send-keys -t $session:$window 'cd bpmn-recommender-server; source ./venv/bin/activate; flask run' C-m
 fi
 
 tmux attach-session -t $session:1
