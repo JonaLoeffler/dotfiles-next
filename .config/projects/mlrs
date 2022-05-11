@@ -1,0 +1,27 @@
+#!/bin/bash
+
+path="/home/jona/Uni"
+session="uni"
+
+# Check if the session exists, discarding output
+# We can check $? for the exit status (zero for success, non-zero for failure)
+tmux has-session -t $session 2>/dev/null
+
+if [ $? != 0 ]
+then
+    tmux new-session -d -s $session -c $path
+
+    window=1
+    tmux rename-window -t $session:$window 'nvim'
+    tmux send-keys -t $session:$window 'nvim . ' C-m
+
+    window=2
+    tmux new-window -t $session:$window 'client'
+    tmux send-keys -t $session:$window 'cd client; npm install; npm run start' C-m
+
+    window=3
+    tmux new-window -t $session:$window 'server'
+    tmux send-keys -t $session:$window 'cd bpmn-recommender-server; ./run.sh' C-m
+fi
+
+tmux attach-session -t $session:1
