@@ -12,6 +12,7 @@ Plug 'mattn/emmet-vim'
 " Language-specific
 Plug 'jwalton512/vim-blade'
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+Plug 'lervag/vimtex'
 
 " Navigation
 Plug 'preservim/nerdtree'
