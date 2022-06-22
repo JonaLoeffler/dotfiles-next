@@ -21,7 +21,7 @@ then
 
     window=3
     tmux new-window -t $session:$window -c $path -n 'server'
-    tmux send-keys -t $session:$window 'cd bpmn-recommender-server; source ./venv/bin/activate; flask run' C-m
+    tmux send-keys -t $session:$window 'cd bpmn-recommender-server; pipenv run flask run' C-m
 fi
 
 tmux attach-session -t $session:1
