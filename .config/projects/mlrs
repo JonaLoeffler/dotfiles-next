@@ -17,7 +17,7 @@ then
 
     window=2
     tmux new-window -t $session:$window -c $path -n 'client'
-    tmux send-keys -t $session:$window 'cd client; npm install; npm run start' C-m
+    tmux send-keys -t $session:$window 'cd bpmn-recommender-client; npm install; npm run start' C-m
 
     window=3
     tmux new-window -t $session:$window -c $path -n 'server'
