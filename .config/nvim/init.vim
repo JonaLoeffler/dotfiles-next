@@ -40,6 +40,9 @@ set wildmenu
 set wildignore=*/node_modules/*,*/.git/*,*/vendor/*
 set path+=**
 
+set laststatus=3
+highlight WinSeparator guibg=None
+
 let mapleader = " "
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/commands.vim
