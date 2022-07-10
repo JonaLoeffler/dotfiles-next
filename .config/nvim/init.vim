@@ -3,7 +3,7 @@ filetype plugin indent on
 
 set exrc " source external .vimrc files
 set guicursor= " block cursor on insert mode
-set nu " show line number
+set number " show line number
 set relativenumber " show relative line numbers
 set nohlsearch " no search highlights
 set hidden " keep files open in buffers
@@ -60,8 +60,14 @@ require'lualine'.setup{
 END
 
 augroup FileTypeSpecificAutocommands
+    autocmd!
     autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType vue setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
     autocmd FileType php setlocal tabstop=4 softtabstop=4 shiftwidth=4
+
+    autocmd FileType tex setlocal tw=80 cc=80 spell
+
+    autocmd FileType gitcommit setlocal tw=68 cc=80 spell
 augroup END

@@ -13,11 +13,11 @@ then
 
     window=1
     tmux rename-window -t $session:$window 'report'
-    tmux send-keys -t $session:$window 'nvim ai-report ' C-m
+    tmux send-keys -t $session:$window 'nvim ai-report/report.tex' C-m
 
     window=2
     tmux new-window -t $session:$window -c $path -n 'slides'
-    tmux send-keys -t $session:$window 'nvim ai-slides' C-m
+    tmux send-keys -t $session:$window 'nvim ai-slides/slides.tex' C-m
 fi
 
 tmux attach-session -t $session:1
