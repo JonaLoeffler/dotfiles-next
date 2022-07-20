@@ -54,3 +54,5 @@ nnoremap <leader>nf :NERDTreeFind<CR>
 
 nnoremap <leader>git :Git<CR>
 nnoremap <leader>gp :Git push<CR>
+nnoremap <leader>gP :Git pull<CR>
+nnoremap <leader>gh :0Gclog<CR>
