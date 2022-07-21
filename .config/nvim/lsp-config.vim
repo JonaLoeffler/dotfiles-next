@@ -23,7 +23,7 @@ nnoremap <silent> rr <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <C-h> <cmd>lua vim.lsp.buf.signature_help()<CR>
 
-nnoremap <C-i> <cmd>lua vim.lsp.buf.formatting()<CR>
+nnoremap <leader> f <cmd>lua vim.lsp.buf.formatting()<CR>
 
 fun! LspLocationList()
     lua vim.diagnostic.setloclist({open = false, severity = {min=vim.diagnostic.severity.HINT}})
@@ -32,4 +32,10 @@ endfun
 augroup THE_PRIMEAGEN_LSP
     autocmd!
     autocmd! BufWrite,BufEnter,InsertLeave * :call LspLocationList()
+augroup END
+
+" Format files that can be formatted by LSP on save
+augroup FORMAT_LSP_FILETYPES
+    autocmd!
+    autocmd! BufWrite,BufEnter,InsertLeave *.php :lua vim.lsp.buf.formatting()
 augroup END

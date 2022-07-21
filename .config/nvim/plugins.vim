@@ -8,6 +8,7 @@ Plug 'github/copilot.vim'
 
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-surround'
 
 " Language-specific
 Plug 'jwalton512/vim-blade'
