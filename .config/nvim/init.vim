@@ -68,6 +68,6 @@ augroup FileTypeSpecificAutocommands
     autocmd FileType php setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
     autocmd FileType tex setlocal tw=80 cc=80 spell
-
+    autocmd FileType markdown setlocal tw=80 cc=80 spell
     autocmd FileType gitcommit setlocal tw=68 cc=80 spell
 augroup END

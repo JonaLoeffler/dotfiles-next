@@ -9,7 +9,7 @@ lsp.vuels.setup{ }
 lsp.pyright.setup{ }
 lsp.r_language_server.setup{ }
 lsp.tsserver.setup{ }
-lsp.rls.setup{ }
+lsp.rust_analyzer.setup{ }
 END
 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>

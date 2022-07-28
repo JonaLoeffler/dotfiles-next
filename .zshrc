@@ -1,5 +1,5 @@
-source ~/.bash_profile
 source ~/.bash_aliases
+source ~/.bash_profile
 source ~/.config/keys
 
 # history search
