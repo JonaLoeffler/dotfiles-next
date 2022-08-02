@@ -44,6 +44,8 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_branches()<cr>
+nnoremap <leader>fws <cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>
+nnoremap <leader>fds <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
 
 let g:netrw_browse_split=2
 let g:netrw_banner=0
