@@ -40,6 +40,8 @@ set wildmenu
 set wildignore=*/node_modules/*,*/.git/*,*/vendor/*
 set path+=**
 
+set clipboard+=unnamedplus
+
 set laststatus=3
 highlight WinSeparator guibg=None
 
