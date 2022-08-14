@@ -59,5 +59,5 @@ augroup END
 " Format files that can be formatted by LSP on save
 augroup FORMAT_LSP_FILETYPES
     autocmd!
-    autocmd! BufWrite,BufEnter,InsertLeave *.php :lua vim.lsp.buf.formatting()
+    autocmd! BufWrite *.php :lua vim.lsp.buf.formatting()
 augroup END
