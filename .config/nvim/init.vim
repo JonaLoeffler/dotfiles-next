@@ -50,6 +50,7 @@ source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/commands.vim
 source ~/.config/nvim/navigation.vim
 source ~/.config/nvim/lsp-config.vim
+luafile ~/.config/nvim/abbreviations.lua
 
 " Theme
 colorscheme dracula
