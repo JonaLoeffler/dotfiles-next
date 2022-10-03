@@ -12,19 +12,20 @@ require("packer").startup(function()
 
     -- Language-specific
     use('jwalton512/vim-blade')
-    use('jalvesaq/Nvim-R', { branch = 'stable'})
+    use('jalvesaq/Nvim-R', { branch = 'stable' })
     use('lervag/vimtex')
 
     -- Navigation
     use('preservim/nerdtree')
     use('mbbill/undotree')
 
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})  -- We recommend updating the parsers on update
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }) -- We recommend updating the parsers on update
     use('nvim-treesitter/playground')
 
     use('nvim-lua/plenary.nvim')
     use('nvim-telescope/telescope.nvim')
-    use('nvim-telescope/telescope-fzf-native.nvim', { run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' })
+    use('nvim-telescope/telescope-fzf-native.nvim',
+        { run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' })
 
     -- Git
     use('tpope/vim-fugitive')
@@ -39,7 +40,7 @@ end)
 -- Completion configuration
 require('compe')
 
--- Telescope remaps 
+-- Telescope remaps
 vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<c-p>", "<cmd>lua require('telescope.builtin').find_files()<CR>", { noremap = true })
@@ -47,9 +48,12 @@ vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin'
 vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>gc", "<cmd>lua require('telescope.builtin').git_branches()<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>s", "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>fws", "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>fds", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>s", "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>",
+    { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>fws", "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>",
+    { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>fds", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>",
+    { noremap = true })
 
 vim.g.netrw_browse_split = 2
 vim.g.netrw_banner = 0

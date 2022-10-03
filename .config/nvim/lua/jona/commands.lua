@@ -1,38 +1,59 @@
-fun! TrimWhitespace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-endfun
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    group = vim.api.nvim_create_augroup("ThePrimeagen", {}),
+    pattern = '*',
+    command = "%s/\\s\\+$//e"
+})
 
-augroup THE_PRIMEAGEN
-    autocmd!
-    autocmd BufWritePre * :call TrimWhitespace()
-augroup end
+vim.api.nvim_create_autocmd({ "BufWritePre", "BufEnter", "InsertLeave" }, {
+    group = vim.api.nvim_create_augroup("ThePrimeagenLsp", {}),
+    pattern = "*",
+    callback = function()
+        vim.diagnostic.setloclist({ open = false, severity = { min = vim.diagnostic.severity.HINT } })
+    end,
+})
 
-augroup FileTypeSpecificAutocommands
-    autocmd!
-    autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd FileType typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd FileType vue setlocal tabstop=2 softtabstop=2 shiftwidth=2
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    group = vim.api.nvim_create_augroup("FormatLspFiletypes", {}),
+    pattern = {"*.php", "*.rs"},
+    callback = function()
+        vim.lsp.buf.format({ async = true })
+    end,
+})
 
-    autocmd FileType php setlocal tabstop=4 softtabstop=4 shiftwidth=4
+local fileTypeSpecific = vim.api.nvim_create_augroup("FileTypeSpecificCommands", {})
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    group = fileTypeSpecific,
+    pattern = "javascript",
+    command = "setlocal tabstop=2 softtabstop=2 shiftwidth=2",
+})
 
-    autocmd FileType tex setlocal tw=80 cc=80 spell
-    autocmd FileType markdown setlocal tw=80 cc=80 spell
-    autocmd FileType gitcommit setlocal tw=68 cc=80 spell
-augroup END
-
-fun! LspLocationList()
-    lua vim.diagnostic.setloclist({open = false, severity = {min=vim.diagnostic.severity.HINT}})
-endfun
-
-augroup THE_PRIMEAGEN_LSP
-    autocmd!
-    autocmd! BufWrite,BufEnter,InsertLeave * :call LspLocationList()
-augroup END
-
--- Format files that can be formatted by LSP on save
-augroup FORMAT_LSP_FILETYPES
-    autocmd!
-    autocmd! BufWrite *.php :lua vim.lsp.buf.formatting()
-augroup END
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    group = fileTypeSpecific,
+    pattern = "typescript",
+    command = "setlocal tabstop=2 softtabstop=2 shiftwidth=2",
+})
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    group = fileTypeSpecific,
+    pattern = "vue",
+    command = "setlocal tabstop=2 softtabstop=2 shiftwidth=2",
+})
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    group = fileTypeSpecific,
+    pattern = "php",
+    command = "setlocal tabstop=4 softtabstop=4 shiftwidth=4",
+})
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    group = fileTypeSpecific,
+    pattern = "tex",
+    command = "setlocal tw=80 cc=80 spell",
+})
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    group = fileTypeSpecific,
+    pattern = "markdown",
+    command = "setlocal tw=80 cc=80 spell",
+})
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    group = fileTypeSpecific,
+    pattern = "gitcommit",
+    command = "setlocal tw=68 cc=80 spell",
+})

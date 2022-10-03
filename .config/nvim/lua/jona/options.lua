@@ -21,8 +21,8 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 -- history
-vim.opt.swapfile = false 
-vim.opt.backup = false 
+vim.opt.swapfile = false
+vim.opt.backup = false
 -- vim.opt.undodir = "~/.cache/vim/undodir"
 vim.opt.undofile = true
 
@@ -32,7 +32,6 @@ vim.opt.colorcolumn = "120"
 vim.opt.textwidth = 120
 
 vim.opt.scrolloff = 8
-vim.opt.completeopt = menuone,noinsert,noselect
 -- vim.opt.noshowmode
 
 vim.opt.wildmenu = true
@@ -40,5 +39,5 @@ vim.opt.wildignore = "*/node_modules/*,*/.git/*,*/vendor/*"
 -- vim.opt.path+=**
 
 -- other
-vim.opt.clipboard = unnamedplus
+vim.opt.clipboard = 'unnamedplus'
 vim.opt.laststatus = 3
