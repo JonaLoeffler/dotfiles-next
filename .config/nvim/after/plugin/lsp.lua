@@ -11,6 +11,14 @@ local on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-h>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
+
+    vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+        group = vim.api.nvim_create_augroup("FormatLspFiletypes", {}),
+        pattern = {"*.php", "*.rs"},
+        callback = function()
+            vim.lsp.buf.format({ async = true })
+        end,
+    })
 end
 
 lsp.vuels.setup {
@@ -57,3 +65,4 @@ lsp.sumneko_lua.setup {
         },
     },
 }
+

@@ -12,14 +12,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre", "BufEnter", "InsertLeave" }, {
     end,
 })
 
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    group = vim.api.nvim_create_augroup("FormatLspFiletypes", {}),
-    pattern = {"*.php", "*.rs"},
-    callback = function()
-        vim.lsp.buf.format({ async = true })
-    end,
-})
-
 local fileTypeSpecific = vim.api.nvim_create_augroup("FileTypeSpecificCommands", {})
 vim.api.nvim_create_autocmd({ "FileType" }, {
     group = fileTypeSpecific,
