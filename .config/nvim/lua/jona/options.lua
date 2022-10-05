@@ -7,6 +7,7 @@ vim.opt.hlsearch = false -- no search highlights
 vim.opt.hidden = true -- keep files open in buffers
 vim.opt.errorbells = false -- stay silent
 vim.opt.wrap = false -- no line wraps
+vim.opt.cmdheight = 0
 
 -- searching
 vim.opt.smartcase = true -- case matching in searches
