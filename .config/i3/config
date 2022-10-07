@@ -15,6 +15,7 @@ exec "setxkbmap -layout de"
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 2
 default_floating_border pixel 2
+for_window [all] title_window_icon padding 3px
 
 # Hide borders
 hide_edge_borders none
