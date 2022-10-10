@@ -1,5 +1,6 @@
 require("packer").startup(function()
     use("wbthomason/packer.nvim")
+    use("MunifTanjim/exrc.nvim")
 
     -- Autocomplete
     use('neovim/nvim-lspconfig')

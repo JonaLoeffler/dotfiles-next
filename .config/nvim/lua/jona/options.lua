@@ -1,5 +1,5 @@
 -- general
-vim.opt.exrc = true -- source external .vimrc files
+vim.opt.exrc = false -- source external .vimrc files
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20" -- block cursor on insert mode
 vim.opt.number = true -- show line number
 vim.opt.relativenumber = true -- show relative line numbers
@@ -7,7 +7,7 @@ vim.opt.hlsearch = false -- no search highlights
 vim.opt.hidden = true -- keep files open in buffers
 vim.opt.errorbells = false -- stay silent
 vim.opt.wrap = false -- no line wraps
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 1
 
 -- searching
 vim.opt.smartcase = true -- case matching in searches
@@ -41,4 +41,4 @@ vim.opt.wildignore = "*/node_modules/*,*/.git/*,*/vendor/*"
 
 -- other
 vim.opt.clipboard = 'unnamedplus'
-vim.opt.laststatus = 3
+-- vim.opt.laststatus = 3

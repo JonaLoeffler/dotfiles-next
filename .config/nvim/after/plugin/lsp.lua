@@ -14,7 +14,7 @@ local on_attach = function(_, bufnr)
 
     vim.api.nvim_create_autocmd({ "BufWritePre" }, {
         group = vim.api.nvim_create_augroup("FormatLspFiletypes", {}),
-        pattern = {"*.php", "*.rs"},
+        pattern = {"*.php", "*.rs", "*.hs"},
         callback = function()
             vim.lsp.buf.format({ async = true })
         end,
@@ -41,6 +41,9 @@ lsp.intelephense.setup {
     init_options = {
         licenceKey = os.getenv('INTELEPHENSE_LICENSE_KEY'),
     }
+}
+lsp.hls.setup {
+    on_attach = on_attach,
 }
 lsp.sumneko_lua.setup {
     on_attach = on_attach,
