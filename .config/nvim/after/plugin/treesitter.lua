@@ -23,6 +23,7 @@ require 'nvim-treesitter.configs'.setup {
         "sparql",
         "sql",
         "toml",
+        "turtle",
         "typescript",
         "vue",
         "yaml"

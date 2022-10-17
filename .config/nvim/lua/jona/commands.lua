@@ -4,6 +4,12 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     command = "%s/\\s\\+$//e"
 })
 
+vim.api.nvim_create_autocmd({ "BufReadPost", "FileReadPost" }, {
+    group = vim.api.nvim_create_augroup("JMaguireTech", {}),
+    pattern = '*',
+    command = ":normal zR"
+})
+
 vim.api.nvim_create_autocmd({ "BufWritePre", "BufEnter", "InsertLeave" }, {
     group = vim.api.nvim_create_augroup("ThePrimeagenLsp", {}),
     pattern = "*",
