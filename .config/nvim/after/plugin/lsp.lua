@@ -68,4 +68,3 @@ lsp.sumneko_lua.setup {
         },
     },
 }
-

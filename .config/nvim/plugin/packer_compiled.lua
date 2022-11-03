@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/jona/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
+  ["exrc.nvim"] = {
+    loaded = true,
+    path = "/home/jona/.local/share/nvim/site/pack/packer/start/exrc.nvim",
+    url = "https://github.com/MunifTanjim/exrc.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/jona/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -93,11 +98,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jona/.local/share/nvim/site/pack/packer/start/nerdtree",
     url = "https://github.com/preservim/nerdtree"
-  },
-  nvim = {
-    loaded = true,
-    path = "/home/jona/.local/share/nvim/site/pack/packer/start/nvim",
-    url = "https://github.com/exrc/nvim"
   },
   ["nvim-compe"] = {
     loaded = true,
