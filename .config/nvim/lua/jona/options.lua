@@ -39,6 +39,10 @@ vim.opt.wildmenu = true
 vim.opt.wildignore = "*/node_modules/*,*/.git/*,*/vendor/*"
 -- vim.opt.path+=**
 
+-- Whitespace
+vim.opt.list = true
+vim.opt.listchars:append({ space = "·" })
+
 -- other
 vim.opt.clipboard = 'unnamedplus'
 -- vim.opt.laststatus = 3

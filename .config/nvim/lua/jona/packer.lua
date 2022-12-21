@@ -34,6 +34,7 @@ require("packer").startup(function()
 
     -- Theme
     use('dracula/vim', { as = 'dracula' })
+    use('wuelnerdotexe/vim-enfocado')
     use('nvim-lualine/lualine.nvim')
     use('kyazdani42/nvim-web-devicons')
 end)

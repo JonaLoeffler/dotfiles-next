@@ -159,6 +159,11 @@ _G.packer_plugins = {
     path = "/home/jona/.local/share/nvim/site/pack/packer/start/vim-blade",
     url = "https://github.com/jwalton512/vim-blade"
   },
+  ["vim-enfocado"] = {
+    loaded = true,
+    path = "/home/jona/.local/share/nvim/site/pack/packer/start/vim-enfocado",
+    url = "https://github.com/wuelnerdotexe/vim-enfocado"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/jona/.local/share/nvim/site/pack/packer/start/vim-fugitive",

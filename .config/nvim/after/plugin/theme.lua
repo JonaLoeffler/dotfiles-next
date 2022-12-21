@@ -1,7 +1,12 @@
-vim.api.nvim_exec("colorscheme dracula", false)
+vim.api.nvim_exec("set termguicolors", false)
 
 require 'lualine'.setup {
     options = {
-        theme = 'dracula'
+        theme = 'enfocado'
     }
 }
+
+vim.g.enfocado_style='nature'
+
+vim.api.nvim_exec("colorscheme enfocado", false)
+
