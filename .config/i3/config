@@ -56,7 +56,7 @@ bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
 # Autostart
-exec --no-startup-id "picom --experimental-backends"
+exec --no-startup-id "picom --daemon"
 exec --no-startup-id "feh --bg-scale ~/Downloads/arch.png"
 
 # --------------------------
