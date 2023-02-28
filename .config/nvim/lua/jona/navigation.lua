@@ -14,3 +14,5 @@ vim.keymap.set("n", "<C-n>", ":lnext<CR>")
 vim.keymap.set("n", "<C-m>", ":lprev<CR>")
 
 vim.keymap.set("t", "<esc>", "<C-\\><C-N>")
+
+vim.keymap.set("n", "<leader>p", "\"0p")

@@ -14,4 +14,3 @@ require("jona.navigation")
 require("jona.commands")
 
 require("jona.packer")
-
