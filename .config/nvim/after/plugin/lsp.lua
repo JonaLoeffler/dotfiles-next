@@ -45,7 +45,7 @@ lsp.intelephense.setup {
 lsp.hls.setup {
     on_attach = on_attach,
 }
-lsp.sumneko_lua.setup {
+lsp.lua_ls.setup {
     on_attach = on_attach,
     settings = {
         Lua = {

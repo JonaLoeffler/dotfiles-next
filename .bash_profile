@@ -18,6 +18,7 @@ if [[ -z $DISPLAY && $(tty) == /dev/tty4 && $XDG_SESSION_TYPE == tty ]]; then
   export GBM_BACKEND=nvidia-drm
   export __GLX_VENDOR_LIBRARY_NAME=nvidia
   export WLR_NO_HARDWARE_CURSORS=1
+  export WLR_RENDERER=vulkan
 
   exec sway --unsupported-gpu
 fi
