@@ -14,23 +14,27 @@ local on_attach = function(_, bufnr)
 
     vim.api.nvim_create_autocmd({ "BufWritePre" }, {
         group = vim.api.nvim_create_augroup("FormatLspFiletypes", {}),
-        pattern = {"*.php", "*.rs", "*.hs"},
+        pattern = {"*.php", "*.rs", "*.hs", "*.java"},
         callback = function()
             vim.lsp.buf.format({ async = true })
         end,
     })
 end
 
-lsp.vuels.setup {
+-- lsp.tsserver.setup {
+--     on_attach = on_attach,
+-- }
+-- lsp.vuels.setup {
+--     on_attach = on_attach,
+-- }
+lsp.volar.setup {
     on_attach = on_attach,
+    filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
 }
 lsp.pyright.setup {
     on_attach = on_attach,
 }
 lsp.r_language_server.setup {
-    on_attach = on_attach,
-}
-lsp.tsserver.setup {
     on_attach = on_attach,
 }
 lsp.rust_analyzer.setup {
@@ -67,4 +71,7 @@ lsp.lua_ls.setup {
             },
         },
     },
+}
+lsp.jdtls.setup{
+    on_attach = on_attach,
 }

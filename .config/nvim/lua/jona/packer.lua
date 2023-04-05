@@ -15,6 +15,7 @@ require("packer").startup(function()
     use('jwalton512/vim-blade')
     use('jalvesaq/Nvim-R', { branch = 'stable' })
     use('lervag/vimtex')
+    use('mfussenegger/nvim-jdtls')
 
     -- Navigation
     use('preservim/nerdtree')
@@ -27,6 +28,12 @@ require("packer").startup(function()
     use('nvim-telescope/telescope.nvim')
     use('nvim-telescope/telescope-fzf-native.nvim',
         { run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' })
+
+    -- Orgmode
+    use {'nvim-orgmode/orgmode', config = function()
+            require('orgmode').setup{}
+        end
+    }
 
     -- Git
     use('tpope/vim-fugitive')
