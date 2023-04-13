@@ -16,3 +16,6 @@ vim.keymap.set("n", "<C-m>", ":lprev<CR>")
 vim.keymap.set("t", "<esc>", "<C-\\><C-N>")
 
 vim.keymap.set("n", "<leader>p", "\"0p")
+
+vim.keymap.set("n", "<leader>oj", ":e ~/Documents/org/journal.org<CR>")
+vim.keymap.set("n", "<leader>ow", ":e ~/Documents/org/work/worklog.org<CR>")
