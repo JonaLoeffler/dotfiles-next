@@ -66,10 +66,6 @@ bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
 # Autostart
-#exec --no-startup-id "picom --daemon"
-#exec --no-startup-id "feh --bg-scale ~/Downloads/arch.png"
-# output * bg /home/jona/Downloads/arch.png fill
-output * bg /usr/share/backgrounds/gnome/adwaita-d.webp fill
 
 # --------------------------
 #  Window management
@@ -227,13 +223,15 @@ for_window [title="R Graphics"] floating enable
 # --------------------------
 #
 
-#  Displays
-exec --no-startup-id "swaymsg 'output "AU Optronics 0x6A9F Unknown" scale 1.3'"
+# Monitor Layout
+exec --no-startup-id ~/.screenlayout/Standalone.sh
+exec --no-startup-id ~/.config/sway/Wallpaper.sh
+
 
 set $mode_display (h)ome, (s)tandalone
 mode "$mode_display" {
-    bindsym h exec --no-startup-id exec "swaymsg 'output "LG Electronics LG Ultra HD 0x0000A534" scale 1.5'", mode "default"
-    bindsym s exec --no-startup-id exec "swaymsg 'output "LG Electronics LG Ultra HD 0x0000A534" dpms off'" , mode "default"
+    bindsym h exec --no-startup-id ~/.screenlayout/Home.sh && ~/.config/sway/Wallpaper.sh, mode "default"
+    bindsym s exec --no-startup-id ~/.screenlayout/Standalone.sh &&  ~/.config/sway/Wallpaper.sh, mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
