@@ -206,11 +206,11 @@ for_window [title="R Graphics"] floating enable
 #
 
 # Monitor Layout
-# exec ~/.screenlayout/Home.sh
+exec ~/.config/i3/Wallpaper.sh
 
 set $mode_display (h)ome, (s)tandalone
 mode "$mode_display" {
-    bindsym h exec --no-startup-id ./.screenlayout/Home.sh && ./.config/i3/Wallpaper.sh, mode "default"
+    bindsym h exec --no-startup-id ./.screenlayout/Home.sh && ./.config/i3/Wallpaper.sh && ./.config/i3/Workspaces.sh, mode "default"
     bindsym s exec --no-startup-id ./.screenlayout/Standalone.sh && ./.config/i3/Wallpaper.sh, mode "default"
 
     bindsym Return mode "default"
