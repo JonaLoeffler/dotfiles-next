@@ -38,6 +38,7 @@ require("packer").startup(function()
     -- Git
     use('tpope/vim-fugitive')
     use('airblade/vim-gitgutter')
+    use('APZelos/blamer.nvim')
 
     -- Theme
     use('dracula/vim', { as = 'dracula' })
