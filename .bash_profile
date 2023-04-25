@@ -9,37 +9,40 @@ export NODE_PATH=$NODE_PATH:$HOME/.npm/lib/node_modules
 
 export PIPENV_VENV_IN_PROJECT=1
 
-if [[ -z $DISPLAY && $(tty) == /dev/tty4 && $XDG_SESSION_TYPE == tty ]]; then
-  export MOZ_ENABLE_WAYLAND=1
-  export QT_QPA_PLATFORM=wayland
 
-  export LIBVA_DRIVER_NAME=nvidia
-  export XDG_SESSION_TYPE=wayland
-  export GBM_BACKEND=nvidia-drm
-  export __GLX_VENDOR_LIBRARY_NAME=nvidia
-  export WLR_NO_HARDWARE_CURSORS=1
-  export WLR_RENDERER=vulkan
+if [ "$HOSTNAME" = contraxia ]; then
+    if [[ -z $DISPLAY && $(tty) == /dev/tty4 && $XDG_SESSION_TYPE == tty ]]; then
+      export MOZ_ENABLE_WAYLAND=1
+      export QT_QPA_PLATFORM=wayland
 
-  exec sway --unsupported-gpu
-fi
+      export LIBVA_DRIVER_NAME=nvidia
+      export XDG_SESSION_TYPE=wayland
+      export GBM_BACKEND=nvidia-drm
+      export __GLX_VENDOR_LIBRARY_NAME=nvidia
+      export WLR_NO_HARDWARE_CURSORS=1
+      export WLR_RENDERER=vulkan
 
-if [[ -z $DISPLAY && $(tty) == /dev/tty3 && $XDG_SESSION_TYPE == tty ]]; then
-  export MOZ_ENABLE_WAYLAND=1
-  export QT_QPA_PLATFORM=wayland
+      exec sway --unsupported-gpu
+    fi
 
-  export LIBVA_DRIVER_NAME=nvidia
-  export XDG_SESSION_TYPE=wayland
-  export GBM_BACKEND=nvidia-drm
-  export __GLX_VENDOR_LIBRARY_NAME=nvidia
-  export WLR_NO_HARDWARE_CURSORS=1
+    if [[ -z $DISPLAY && $(tty) == /dev/tty3 && $XDG_SESSION_TYPE == tty ]]; then
+      export MOZ_ENABLE_WAYLAND=1
+      export QT_QPA_PLATFORM=wayland
 
-  exec Hyprland
-fi
+      export LIBVA_DRIVER_NAME=nvidia
+      export XDG_SESSION_TYPE=wayland
+      export GBM_BACKEND=nvidia-drm
+      export __GLX_VENDOR_LIBRARY_NAME=nvidia
+      export WLR_NO_HARDWARE_CURSORS=1
 
-if [[ -z $DISPLAY && $(tty) == /dev/tty2 && $XDG_SESSION_TYPE == tty ]]; then
-  MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
-fi
+      exec Hyprland
+    fi
 
-if [[ -z $DISPLAY && $(tty) == /dev/tty1 ]]; then
-  XDG_SESSION_TYPE=x11 GDK_BACKEND=x11 exec startx
+    if [[ -z $DISPLAY && $(tty) == /dev/tty2 && $XDG_SESSION_TYPE == tty ]]; then
+      MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
+    fi
+
+    if [[ -z $DISPLAY && $(tty) == /dev/tty1 ]]; then
+      XDG_SESSION_TYPE=x11 GDK_BACKEND=x11 exec startx
+    fi
 fi
