@@ -18,7 +18,8 @@ require("packer").startup(function()
     use('mfussenegger/nvim-jdtls')
 
     -- Navigation
-    use('preservim/nerdtree')
+    -- use('preservim/nerdtree')
+    use('nvim-tree/nvim-tree.lua')
     use('mbbill/undotree')
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }) -- We recommend updating the parsers on update
