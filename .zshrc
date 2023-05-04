@@ -39,8 +39,10 @@ source /home/jona/.profile
 export PATH=$HOME/.jdtls/jdt-language-server-1.21.0-202303161431/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.config/oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

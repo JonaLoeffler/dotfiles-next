@@ -1,6 +1,3 @@
-export LIBVA_DRIVER_NAME=vdpau
-export VDPAU_DRIVER=nvidia
-
 export VISUAL=nvim
 export EDITOR=nvim
 
@@ -9,8 +6,12 @@ export NODE_PATH=$NODE_PATH:$HOME/.npm/lib/node_modules
 
 export PIPENV_VENV_IN_PROJECT=1
 
+export XDG_CONFIG_HOME=$HOME/.config
 
 if [ "$HOSTNAME" = contraxia ]; then
+    export LIBVA_DRIVER_NAME=vdpau
+    export VDPAU_DRIVER=nvidia
+
     if [[ -z $DISPLAY && $(tty) == /dev/tty4 && $XDG_SESSION_TYPE == tty ]]; then
       export MOZ_ENABLE_WAYLAND=1
       export QT_QPA_PLATFORM=wayland
@@ -46,3 +47,8 @@ if [ "$HOSTNAME" = contraxia ]; then
       XDG_SESSION_TYPE=x11 GDK_BACKEND=x11 exec startx
     fi
 fi
+
+if [ "$HOSTNAME" = nidavellir ]; then
+    export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+fi
+

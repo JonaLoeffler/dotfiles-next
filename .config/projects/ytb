@@ -1,7 +1,7 @@
 #!/bin/bash
 
-path="/home/jona/Uni/master-thesis"
-session="mt"
+path="/home/jona/Code/analyze-backend"
+session="ytb"
 
 # Check if the session exists, discarding output
 # We can check $? for the exit status (zero for success, non-zero for failure)
@@ -12,12 +12,12 @@ then
     tmux new-session -d -s $session -c $path
 
     window=1
-    tmux rename-window -t $session:$window 'nvim'
+    tmux rename-window -t $session:$window 'neovim'
     tmux send-keys -t $session:$window 'nvim .' C-m
 
     window=2
-    tmux new-window -t $session:$window -c $path -n 'make'
-    tmux send-keys -t $session:$window 'make' C-m
+    tmux new-window -t $session:$window -c "$path/server" -n 'gradle'
+    tmux send-keys -t $session:$window './gradlew build' C-m
 fi
 
 tmux attach-session -t $session:1

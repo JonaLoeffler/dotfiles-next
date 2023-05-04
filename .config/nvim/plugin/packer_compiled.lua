@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/jona/.local/share/nvim/site/pack/packer/start/Nvim-R",
     url = "https://github.com/jalvesaq/Nvim-R"
   },
+  ["blamer.nvim"] = {
+    loaded = true,
+    path = "/home/jona/.local/share/nvim/site/pack/packer/start/blamer.nvim",
+    url = "https://github.com/APZelos/blamer.nvim"
+  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/home/jona/.local/share/nvim/site/pack/packer/start/emmet-vim",
@@ -94,11 +99,6 @@ _G.packer_plugins = {
     path = "/home/jona/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  nerdtree = {
-    loaded = true,
-    path = "/home/jona/.local/share/nvim/site/pack/packer/start/nerdtree",
-    url = "https://github.com/preservim/nerdtree"
-  },
   ["nvim-compe"] = {
     loaded = true,
     path = "/home/jona/.local/share/nvim/site/pack/packer/start/nvim-compe",
@@ -113,6 +113,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jona/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/jona/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
