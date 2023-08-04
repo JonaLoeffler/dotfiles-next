@@ -1,2 +1,6 @@
 [user]
 	name = Jona Löffler
+[push]
+	autoSetupRemote = 1
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com

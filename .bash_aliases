@@ -9,7 +9,7 @@ alias o=open
 alias c=clear
 alias cls=clear
 
-alias weather="curl wttr.in/koblenz"
+alias weather="curl wttr.in/montabaur"
 alias wtr=weather
 
 alias "gittag"="git tag --sort v:refname"
