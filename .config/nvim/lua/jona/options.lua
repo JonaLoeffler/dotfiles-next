@@ -8,6 +8,7 @@ vim.opt.hidden = true -- keep files open in buffers
 vim.opt.errorbells = false -- stay silent
 vim.opt.wrap = false -- no line wraps
 vim.opt.cmdheight = 1
+vim.opt.updatetime = 500 -- decrease time for CursorHold event
 
 -- searching
 vim.opt.smartcase = true -- case matching in searches
