@@ -281,6 +281,15 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # --------------------------
+#  Display controls
+# --------------------------
+#
+# Brightness controls
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+
+# --------------------------
 #  Gaps
 # --------------------------
 #

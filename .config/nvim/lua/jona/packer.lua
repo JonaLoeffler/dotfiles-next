@@ -14,6 +14,8 @@ require("packer").startup(function()
     -- Plug 'neoclide/coc.nvim', {'branch': 'release'}
     use('mattn/emmet-vim')
     use('tpope/vim-surround')
+    use('tpope/vim-commentary')
+    use('suy/vim-context-commentstring')
 
     -- Language-specific
     use('jwalton512/vim-blade')
@@ -42,8 +44,9 @@ require("packer").startup(function()
 
     -- Git
     use('tpope/vim-fugitive')
-    use('airblade/vim-gitgutter')
-    use('APZelos/blamer.nvim')
+    -- use('airblade/vim-gitgutter')
+    -- use('APZelos/blamer.nvim')
+    use('lewis6991/gitsigns.nvim')
     use {'akinsho/git-conflict.nvim', tag = "*", config = function()
           require('git-conflict').setup()
         end

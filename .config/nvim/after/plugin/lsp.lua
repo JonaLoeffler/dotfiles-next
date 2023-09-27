@@ -29,7 +29,9 @@ end
 -- }
 lsp.volar.setup {
     on_attach = on_attach,
-    filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json', 'cjs', 'mjs'}
+    filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json', 'cjs', 'mjs'},
+    -- filetypes = {'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json', 'cjs', 'mjs'}
+    cmd = { '/home/jona/LanguageServer/workspace/vue/packages/vue-language-server/bin/vue-language-server.js', '--stdio' }
 }
 lsp.pyright.setup {
     on_attach = on_attach,

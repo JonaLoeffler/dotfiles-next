@@ -6,7 +6,7 @@
     "margin-bottom": 0,
     "margin-right": 10,
     "spacing": 5, // Gaps between modules (4px)
-    "modules-left": [],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["wlr/workspaces"],
     "modules-right": ["pulseaudio", "cpu", "memory", "battery", "network", "tray", "clock"],
     "layer": "top",

@@ -6,4 +6,8 @@
 vim.opt.termguicolors = true
 
 -- empty setup using defaults
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+    renderer = {
+        group_empty = true
+    }
+})

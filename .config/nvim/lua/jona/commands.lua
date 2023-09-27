@@ -55,3 +55,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     pattern = "gitcommit",
     command = "setlocal tw=68 cc=80 spell",
 })
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    group = fileTypeSpecific,
+    pattern = "java",
+    command = "setlocal noexpandtab",
+})
