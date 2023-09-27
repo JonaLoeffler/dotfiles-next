@@ -1,14 +1,17 @@
 -- general
 vim.opt.exrc = false -- source external .vimrc files
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20" -- block cursor on insert mode
-vim.opt.number = true -- show line number
-vim.opt.relativenumber = true -- show relative line numbers
 vim.opt.hlsearch = false -- no search highlights
 vim.opt.hidden = true -- keep files open in buffers
 vim.opt.errorbells = false -- stay silent
 vim.opt.wrap = false -- no line wraps
 vim.opt.cmdheight = 1
 vim.opt.updatetime = 500 -- decrease time for CursorHold event
+
+-- line numbers
+vim.opt.number = true -- show line number
+vim.opt.numberwidth = 2 -- less width
+vim.opt.relativenumber = true -- show relative line numbers
 
 -- searching
 vim.opt.smartcase = true -- case matching in searches
