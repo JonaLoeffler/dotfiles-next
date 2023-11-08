@@ -1,6 +1,6 @@
 local lsp = require 'lspconfig'
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true }
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
@@ -19,6 +19,10 @@ local on_attach = function(_, bufnr)
             vim.lsp.buf.format({ async = true })
         end,
     })
+
+    if client.server_capabilities.documentSymbolProvider then
+        require'nvim-navic'.attach(client, bufnr)
+    end
 end
 
 -- lsp.tsserver.setup {
@@ -29,7 +33,9 @@ end
 -- }
 lsp.volar.setup {
     on_attach = on_attach,
-    filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+    filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json', 'cjs', 'mjs'},
+    -- filetypes = {'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json', 'cjs', 'mjs'}
+    cmd = { '/home/jona/LanguageServer/workspace/vue/packages/vue-language-server/bin/vue-language-server.js', '--stdio' }
 }
 lsp.pyright.setup {
     on_attach = on_attach,
