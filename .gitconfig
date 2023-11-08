@@ -1,2 +1,11 @@
 [user]
 	name = Jona Löffler
+	email =
+[credential]
+	helper = cache
+[pull]
+	rebase = true
+[core]
+	exlcludefile = /home/jona/.config/git/.gitignore
+[push]
+	autoSetupRemote = 1
