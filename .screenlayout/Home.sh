@@ -9,6 +9,13 @@ if [ "$HOSTNAME" = nidavellir ]; then
         swaymsg 'output "AU Optronics 0x6A9F Unknown" scale 1.2'
     fi
 elif [ "$HOSTNAME" = contraxia ]; then
-    echo "TODO"
+    if [ "$XDG_SESSION_DESKTOP" = i3 ]; then
+        xrandr --output HDMI-0 --off --output DP-0 --mode 2560x1440 --pos 3840x0 --rotate right --output DP-1 --off --output HDMI-1 --off --output DP-2 --primary --mode 3840x2160 --pos 0x323 --rotate normal --output DP-3 --off
+    elif [ "$XDG_SESSION_DESKTOP" = sway ]; then
+        echo "Sway nidavellir"
+        swaymsg 'output "LG Electronics LG Ultra HD 0x0000A534" dpms on';
+        swaymsg 'output "LG Electronics LG Ultra HD 0x0000A534" scale 1.5';
+        swaymsg 'output "AU Optronics 0x6A9F Unknown" scale 1.2'
+    fi
 fi
 

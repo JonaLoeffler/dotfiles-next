@@ -1,8 +1,8 @@
 import:
   # - ~/.config/alacritty/alacritty-theme/themes/doom_one.yaml.yaml
-  - ~/.config/alacritty/alacritty-theme/themes/breeze.yaml
+  # - ~/.config/alacritty/alacritty-theme/themes/breeze.yaml
   # - ~/.config/alacritty/alacritty-theme/themes/darcula.yaml
-  # - ~/.config/alacritty/dracula.yml
+  - ~/.config/alacritty/dracula.yml
 
 window:
   padding:
