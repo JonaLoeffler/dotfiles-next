@@ -7,6 +7,8 @@ vim.opt.errorbells = false -- stay silent
 vim.opt.wrap = false -- no line wraps
 vim.opt.cmdheight = 1
 vim.opt.updatetime = 500 -- decrease time for CursorHold event
+vim.opt.cursorline = true
+vim.opt.showmode = false
 
 -- line numbers
 vim.opt.number = true -- show line number
@@ -49,4 +51,4 @@ vim.opt.listchars:append({ space = "·" })
 
 -- other
 vim.opt.clipboard = 'unnamedplus'
--- vim.opt.laststatus = 3
+vim.opt.laststatus = 2
