@@ -1,0 +1,23 @@
+#!/bin/bash
+
+path="/home/jona/Code/platform-service"
+session="pfs"
+
+# Check if the session exists, discarding output
+# We can check $? for the exit status (zero for success, non-zero for failure)
+tmux has-session -t $session 2>/dev/null
+
+if [ $? != 0 ]
+then
+    tmux new-session -d -s $session -c $path
+
+    window=1
+    tmux rename-window -t $session:$window 'neovim'
+    tmux send-keys -t $session:$window 'source .env.local.sh' C-m 'nvim .' C-m
+
+    window=2
+    tmux new-window -t $session:$window -c $path -n 'git'
+    tmux send-keys -t $session:$window 'source .env.local.sh' C-m 'cargo build' C-m
+fi
+
+tmux attach-session -t $session:1
