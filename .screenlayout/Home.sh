@@ -10,7 +10,7 @@ if [ "$HOSTNAME" = nidavellir ]; then
     fi
 elif [ "$HOSTNAME" = contraxia ]; then
     if [ "$XDG_SESSION_DESKTOP" = i3 ]; then
-        xrandr --output HDMI-0 --off --output DP-0 --mode 2560x1440 --pos 3840x0 --rotate right --output DP-1 --off --output HDMI-1 --off --output DP-2 --primary --mode 3840x2160 --pos 0x323 --rotate normal --output DP-3 --off
+        xrandr --output HDMI-0 --off --output DP-0 --mode 2560x1440 --pos 3840x0 --rotate right --output DP-1 --off --output HDMI-1 --off --output DP-2 --primary --mode 3840x2160 --pos 0x310 --rotate normal --output DP-3 --off
     elif [ "$XDG_SESSION_DESKTOP" = sway ]; then
         echo "Sway nidavellir"
         swaymsg 'output "LG Electronics LG Ultra HD 0x0000A534" dpms on';
