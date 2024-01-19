@@ -230,7 +230,7 @@ exec --no-startup-id ~/.config/sway/Wallpaper.sh
 
 set $mode_display (h)ome, (s)tandalone
 mode "$mode_display" {
-    bindsym h exec --no-startup-id ~/.screenlayout/Home.sh && ~/.config/sway/Wallpaper.sh, mode "default"
+    bindsym h exec --no-startup-id output "LG Electronics LG Ultra HD 0x0000A534" && ~/.config/sway/Wallpaper.sh, mode "default"
     bindsym s exec --no-startup-id ~/.screenlayout/Standalone.sh &&  ~/.config/sway/Wallpaper.sh, mode "default"
 
     bindsym Return mode "default"

@@ -13,7 +13,6 @@ if [ "$HOSTNAME" = contraxia ]; then
     export VDPAU_DRIVER=nvidia
 
     if [[ -z $DISPLAY && $(tty) == /dev/tty4 && $XDG_SESSION_TYPE == tty ]]; then
-      export MOZ_ENABLE_WAYLAND=1
       export QT_QPA_PLATFORM=wayland
 
       export LIBVA_DRIVER_NAME=nvidia
@@ -27,7 +26,6 @@ if [ "$HOSTNAME" = contraxia ]; then
     fi
 
     if [[ -z $DISPLAY && $(tty) == /dev/tty3 && $XDG_SESSION_TYPE == tty ]]; then
-      export MOZ_ENABLE_WAYLAND=1
       export QT_QPA_PLATFORM=wayland
 
       export LIBVA_DRIVER_NAME=nvidia
@@ -40,7 +38,7 @@ if [ "$HOSTNAME" = contraxia ]; then
     fi
 
     if [[ -z $DISPLAY && $(tty) == /dev/tty2 && $XDG_SESSION_TYPE == tty ]]; then
-      MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
+      QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
     fi
 
     if [[ -z $DISPLAY && $(tty) == /dev/tty1 ]]; then
@@ -52,7 +50,6 @@ if [ "$HOSTNAME" = nidavellir ]; then
     export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
     if [[ -z $DISPLAY && $(tty) == /dev/tty4 && $XDG_SESSION_TYPE == tty ]]; then
-      export MOZ_ENABLE_WAYLAND=1
       export QT_QPA_PLATFORM=wayland
 
       export LIBVA_DRIVER_NAME=nvidia
@@ -63,11 +60,10 @@ if [ "$HOSTNAME" = nidavellir ]; then
       export WLR_NO_HARDWARE_CURSORS=1
       export WLR_RENDERER=vulkan
 
-      exec sway --unsupported-gpu
+      exec sway --unsupported-gpu --debug &> /home/jona/sway-debug.log
     fi
 
     if [[ -z $DISPLAY && $(tty) == /dev/tty3 && $XDG_SESSION_TYPE == tty ]]; then
-      export MOZ_ENABLE_WAYLAND=1
       export QT_QPA_PLATFORM=wayland
 
       export LIBVA_DRIVER_NAME=nvidia

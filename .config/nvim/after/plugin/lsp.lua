@@ -14,7 +14,7 @@ local on_attach = function(client, bufnr)
 
     vim.api.nvim_create_autocmd({ "BufWritePre" }, {
         group = vim.api.nvim_create_augroup("FormatLspFiletypes", {}),
-        pattern = {"*.php", "*.rs", "*.hs", "*.java"},
+        pattern = {"*.php", "*.rs", "*.hs"},
         callback = function()
             vim.lsp.buf.format({ async = true })
         end,
