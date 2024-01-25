@@ -26,14 +26,6 @@ if [ "$HOSTNAME" = contraxia ]; then
     fi
 
     if [[ -z $DISPLAY && $(tty) == /dev/tty3 && $XDG_SESSION_TYPE == tty ]]; then
-      export QT_QPA_PLATFORM=wayland
-
-      export LIBVA_DRIVER_NAME=nvidia
-      export XDG_SESSION_TYPE=wayland
-      export GBM_BACKEND=nvidia-drm
-      export __GLX_VENDOR_LIBRARY_NAME=nvidia
-      export WLR_NO_HARDWARE_CURSORS=1
-
       exec Hyprland
     fi
 
@@ -64,13 +56,15 @@ if [ "$HOSTNAME" = nidavellir ]; then
     fi
 
     if [[ -z $DISPLAY && $(tty) == /dev/tty3 && $XDG_SESSION_TYPE == tty ]]; then
-      export QT_QPA_PLATFORM=wayland
+      export HYPR_ADDITIONAL_CONFIG=nidavellir-intel
 
-      export LIBVA_DRIVER_NAME=nvidia
-      export XDG_SESSION_TYPE=wayland
-      export GBM_BACKEND=nvidia-drm
-      export __GLX_VENDOR_LIBRARY_NAME=nvidia
-      export WLR_NO_HARDWARE_CURSORS=1
+      exec Hyprland
+    fi
+
+    if [[ -z $DISPLAY && $(tty) == /dev/tty2 && $XDG_SESSION_TYPE == tty ]]; then
+      # Render everything on nvidia gpu, disable laptop screen
+      export WLR_DRM_DEVICES=/dev/dri/card1:/dev/dri/card0
+      export HYPR_ADDITIONAL_CONFIG=nidavellir-nvidia
 
       exec Hyprland
     fi
