@@ -38,6 +38,7 @@ source /home/jona/.profile
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.jdtls/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 

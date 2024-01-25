@@ -8,7 +8,7 @@ export PIPENV_VENV_IN_PROJECT=1
 
 export XDG_CONFIG_HOME=$HOME/.config
 
-if [ "$HOSTNAME" = contraxia ]; then
+if [ $(cat /etc/hostname) = Contraxia ]; then
     export LIBVA_DRIVER_NAME=vdpau
     export VDPAU_DRIVER=nvidia
 

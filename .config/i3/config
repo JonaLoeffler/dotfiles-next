@@ -206,6 +206,7 @@ for_window [title="R Graphics"] floating enable
 #
 
 # Monitor Layout
+exec ~/.screenlayout/Home.sh
 exec ~/.config/i3/Wallpaper.sh
 
 set $mode_display (h)ome, (s)tandalone

@@ -12,8 +12,9 @@ if [ "$HOSTNAME" = nidavellir ]; then
         swaymsg 'output "AU Optronics 0x6A9F Unknown" scale 1.4'
         echo "sway nidavellir done"
     fi
-elif [ "$HOSTNAME" = contraxia ]; then
+elif [ $(cat /etc/hostname) = Contraxia ]; then
     if [ "$XDG_SESSION_DESKTOP" = i3 ]; then
+        echo "i3 contraxia"
         xrandr --output HDMI-0 --off --output DP-0 --mode 2560x1440 --pos 3840x0 --rotate right --output DP-1 --off --output HDMI-1 --off --output DP-2 --primary --mode 3840x2160 --pos 0x310 --rotate normal --output DP-3 --off
     elif [ "$XDG_SESSION_DESKTOP" = sway ]; then
         echo "Sway nidavellir"
