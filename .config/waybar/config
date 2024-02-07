@@ -7,8 +7,8 @@
     "margin-right": 10,
     "spacing": 5, // Gaps between modules (4px)
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["wlr/workspaces"],
-    "modules-right": ["pulseaudio", "cpu", "memory", "battery", "network", "tray", "clock"],
+    "modules-center": [""],
+    "modules-right": ["pulseaudio", "backlight", "cpu", "memory", "battery", "network", "tray", "clock"],
     "layer": "top",
     "wlr/workspaces": {
       "format": "{icon}",
@@ -49,15 +49,15 @@
         "max-length": 10,
     },
     "backlight": {
-        "device": "DP-1",
+        "device": "backlight",
         "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
         "on-click": "",
     },
     "network": {
-        "format-wifi": "直 {signalStrength}%",
+        "format-wifi": "󰖩   {signalStrength} %",
         "format-ethernet": " wired",
-        "format-disconnected": "睊",
+        "format-disconnected": "󰲛 ",
     },
 
     "pulseaudio": {
@@ -82,7 +82,7 @@
     },
 
     "battery": {
-      "bat": "BAT1",
+      "bat": "BAT0",
       "adapter": "ADP0",
       "interval": 60,
       "states": {
