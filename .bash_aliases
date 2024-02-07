@@ -3,6 +3,7 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias more=less
 alias ..="cd .."
+alias ll="ls -lahv"
 
 alias open="xdg-open"
 alias o=open
