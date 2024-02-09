@@ -18,6 +18,8 @@ then
     window=2
     tmux new-window -t $session:$window -c "$path/server" -n 'docker'
     tmux send-keys -t $session:$window 'docker compose up -d' C-m
+
+    cd $path && neovide .
 fi
 
 tmux attach-session -t $session:1

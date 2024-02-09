@@ -43,6 +43,7 @@ require("packer").startup(function()
             require('orgmode').setup{}
         end
     }
+    use('sotte/presenting.vim')
 
     -- Git
     use('tpope/vim-fugitive')
