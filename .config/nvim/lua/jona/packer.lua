@@ -22,6 +22,7 @@ require("packer").startup(function()
     use('jalvesaq/Nvim-R', { branch = 'stable' })
     use('lervag/vimtex')
     use('mfussenegger/nvim-jdtls')
+    use('williamboman/mason.nvim')
 
     -- Navigation
     -- use('preservim/nerdtree')
