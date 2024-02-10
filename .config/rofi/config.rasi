@@ -1,1 +1,6 @@
 @theme "/home/jona/.local/share/rofi/themes/theme.jona.rasi"
+
+
+window {
+    width: 800;
+}
