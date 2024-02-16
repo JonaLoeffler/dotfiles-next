@@ -18,7 +18,8 @@ local path_to_plugins = jdtls_path .. "/plugins/"
 local path_to_jar = path_to_plugins .. "org.eclipse.equinox.launcher_1.6.700.v20231214-2017.jar"
 local lombok_path = jdtls_path .. "/lombok.jar"
 
-local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
+-- local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
+local root_markers = { ".git", "mvnw", "pom.xml"  }
 local root_dir = require("jdtls.setup").find_root(root_markers)
 if root_dir == "" then
   return
@@ -58,78 +59,78 @@ local config = {
   -- Here you can configure eclipse.jdt.ls specific settings
   -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
   -- for a list of options
-  -- settings = {
-  --   java = {
-  --     home = '/Users/ivanermolaev/Library/Java/JavaVirtualMachines/temurin-18.0.1/Contents/Home/',
-  --     eclipse = {
-  --       downloadSources = true,
-  --     },
-  --     configuration = {
-  --       updateBuildConfiguration = "interactive",
-  --       runtimes = {
-  --         {
-  --           name = "JavaSE-18",
-  --           path = "/Users/ivanermolaev/Library/Java/JavaVirtualMachines/temurin-18.0.1/Contents/Home",
-  --         },
-  --         {
-  --           name = "JavaSE-17",
-  --           path = "/Users/ivanermolaev/Library/Java/JavaVirtualMachines/temurin-17.0.4/Contents/Home",
-  --         }
-  --       }
-  --     },
-  --     maven = {
-  --       downloadSources = true,
-  --     },
-  --     implementationsCodeLens = {
-  --       enabled = true,
-  --     },
-  --     referencesCodeLens = {
-  --       enabled = true,
-  --     },
-  --     references = {
-  --       includeDecompiledSources = true,
-  --     },
-  --     format = {
-  --       enabled = true,
-  --       settings = {
-  --         url = vim.fn.stdpath "config" .. "/lang-servers/intellij-java-google-style.xml",
-  --         profile = "GoogleStyle",
-  --       },
-  --     },
+  settings = {
+    java = {
+      -- home = '/Users/ivanermolaev/Library/Java/JavaVirtualMachines/temurin-18.0.1/Contents/Home/',
+      eclipse = {
+        downloadSources = true,
+      },
+      -- configuration = {
+      --   updateBuildConfiguration = "interactive",
+      --   runtimes = {
+      --     {
+      --       name = "JavaSE-18",
+      --       path = "/Users/ivanermolaev/Library/Java/JavaVirtualMachines/temurin-18.0.1/Contents/Home",
+      --     },
+      --     {
+      --       name = "JavaSE-17",
+      --       path = "/Users/ivanermolaev/Library/Java/JavaVirtualMachines/temurin-17.0.4/Contents/Home",
+      --     }
+      --   }
+      -- },
+      maven = {
+        downloadSources = true,
+      },
+      implementationsCodeLens = {
+        enabled = true,
+      },
+      referencesCodeLens = {
+        enabled = true,
+      },
+      references = {
+        includeDecompiledSources = true,
+      },
+      format = {
+        enabled = true,
+        settings = {
+          url = vim.fn.stdpath "config" .. "/lang-servers/intellij-java-google-style.xml",
+          profile = "GoogleStyle",
+        },
+      },
 
-  --   },
-  --   signatureHelp = { enabled = true },
-  --   completion = {
-  --     favoriteStaticMembers = {
-  --       "org.hamcrest.MatcherAssert.assertThat",
-  --       "org.hamcrest.Matchers.*",
-  --       "org.hamcrest.CoreMatchers.*",
-  --       "org.junit.jupiter.api.Assertions.*",
-  --       "java.util.Objects.requireNonNull",
-  --       "java.util.Objects.requireNonNullElse",
-  --       "org.mockito.Mockito.*",
-  --     },
-  --     importOrder = {
-  --       "java",
-  --       "javax",
-  --       "com",
-  --       "org"
-  --     },
-  --   },
-  --   -- extendedClientCapabilities = extendedClientCapabilities,
-  --   sources = {
-  --     organizeImports = {
-  --       starThreshold = 9999,
-  --       staticStarThreshold = 9999,
-  --     },
-  --   },
-  --   codeGeneration = {
-  --     toString = {
-  --       template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
-  --     },
-  --     useBlocks = true,
-  --   },
-  -- },
+    },
+    signatureHelp = { enabled = true },
+    completion = {
+      favoriteStaticMembers = {
+        "org.hamcrest.MatcherAssert.assertThat",
+        "org.hamcrest.Matchers.*",
+        "org.hamcrest.CoreMatchers.*",
+        "org.junit.jupiter.api.Assertions.*",
+        "java.util.Objects.requireNonNull",
+        "java.util.Objects.requireNonNullElse",
+        "org.mockito.Mockito.*",
+      },
+      importOrder = {
+        "java",
+        "javax",
+        "com",
+        "org"
+      },
+    },
+    -- extendedClientCapabilities = extendedClientCapabilities,
+    sources = {
+      organizeImports = {
+        starThreshold = 9999,
+        staticStarThreshold = 9999,
+      },
+    },
+    codeGeneration = {
+      toString = {
+        template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
+      },
+      useBlocks = true,
+    },
+  },
 
   flags = {
     allow_incremental_sync = true,

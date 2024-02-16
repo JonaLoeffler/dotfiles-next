@@ -58,5 +58,5 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.api.nvim_create_autocmd({ "FileType" }, {
     group = fileTypeSpecific,
     pattern = "java",
-    command = "setlocal noexpandtab",
+    command = "setlocal noexpandtab tabstop=2 softtabstop=2 shiftwidth=2",
 })

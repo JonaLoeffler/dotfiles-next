@@ -55,8 +55,8 @@
         "on-click": "",
     },
     "network": {
-        "format-wifi": "󰖩   {signalStrength} %",
-        "format-ethernet": " wired",
+        "format-wifi": "󰖩   {signalStrength}% {ipaddr}",
+        "format-ethernet": " {ipaddr}",
         "format-disconnected": "󰲛 ",
     },
 

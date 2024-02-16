@@ -1,6 +1,8 @@
 -- general
 vim.opt.exrc = false -- source external .vimrc files
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20" -- block cursor on insert mode
+-- vim.opt.guifont = "Inconsolata Nerd Font:h13:w1"
+vim.opt.linespace = 4
 vim.opt.hlsearch = false -- no search highlights
 vim.opt.hidden = true -- keep files open in buffers
 vim.opt.errorbells = false -- stay silent
