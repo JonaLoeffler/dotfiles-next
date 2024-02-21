@@ -24,6 +24,17 @@ require("packer").startup(function()
     use('mfussenegger/nvim-jdtls')
     use('williamboman/mason.nvim')
 
+
+    use {
+      "nvim-neotest/neotest",
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "antoinemadec/FixCursorHold.nvim",
+        "nvim-treesitter/nvim-treesitter",
+        "rcasia/neotest-java"
+      }
+    }
+
     -- Navigation
     -- use('preservim/nerdtree')
     use('nvim-tree/nvim-tree.lua')

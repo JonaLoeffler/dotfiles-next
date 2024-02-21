@@ -17,7 +17,7 @@ vim.keymap.set("t", "<esc>", "<C-\\><C-N>")
 
 vim.keymap.set("n", "<leader>p", "\"0p")
 
-vim.keymap.set("n", "<leader>t", ":tabnew<CR>")
+vim.keymap.set("n", "<leader>tn", ":tabnew<CR>")
 
 vim.keymap.set("n", "<leader>oj", ":e ~/Documents/org/journal.org<CR>")
 vim.keymap.set("n", "<leader>ow", ":e ~/Documents/org/work/worklog.org<CR>")
