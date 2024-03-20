@@ -93,7 +93,7 @@ local config = {
       format = {
         enabled = true,
         settings = {
-          url = vim.fn.stdpath "config" .. "/lang-servers/intellij-java-google-style.xml",
+          url = vim.fn.stdpath "config" .. "/lang-servers/eclipse-java-google-style.xml",
           profile = "GoogleStyle",
         },
       },

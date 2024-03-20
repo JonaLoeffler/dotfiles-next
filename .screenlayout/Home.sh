@@ -1,7 +1,7 @@
 #!/bin/sh
 if [ "$HOSTNAME" = nidavellir ]; then
     if [ "$XDG_SESSION_DESKTOP" = i3 ]; then
-        xrandr --output eDP-1 --mode 2560x1600 --pos 0x680 --rotate normal --output DP-1-0.1.5 --mode 2560x1440 --pos 6400x0 --rotate right --output DP-1-0.1.6 --primary --mode 3840x2160 --pos 2560x400 --rotate normal --output DP-1-0 --off --output DP-1-1 --off --output DP-1-2 --off --output DP-1-3 --off --output HDMI-1-0 --off --output DP-1-4 --off --output DP-1-5 --off
+        xrandr --output eDP-1 --mode 2560x1600 --pos 5280x667 --rotate normal --output DP-1-0.1.5 --mode 2560x1440 --pos 0x0 --rotate left --output DP-1-0.1.6 --primary --mode 3840x2160 --pos 1440x309 --rotate normal --output DP-1-0 --off --output DP-1-1 --off --output DP-1-2 --off --output DP-1-3 --off --output HDMI-1-0 --off --output DP-1-4 --off --output DP-1-5 --off
     elif [ "$XDG_SESSION_DESKTOP" = sway ] || [ "$XDG_SESSION_DESKTOP" = sway-nvidia ]; then
         echo "Sway nidavellir"
         # sway output eDP-1
