@@ -20,7 +20,7 @@ then
 
     window=3
     tmux new-window -t $session:$window -c $path -n 'docker'
-    tmux send-keys -t $session:$window 'docker compose up -d' C-m 'docker compose exec web npm install' C-m
+    tmux send-keys -t $session:$window 'docker compose up -d' C-m 'docker compose run web npm install' C-m
 
     cd $path && neovide .
 fi
