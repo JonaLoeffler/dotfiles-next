@@ -41,7 +41,7 @@ fi
 if [ "$HOSTNAME" = nidavellir ]; then
     export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
-    if [[ -z $DISPLAY && $(tty) == /dev/tty4 && $XDG_SESSION_TYPE == tty ]]; then
+    if [[ -z $DISPLAY && $(tty) == /dev/tty2 && $XDG_SESSION_TYPE == tty ]]; then
       export QT_QPA_PLATFORM=wayland
 
       export LIBVA_DRIVER_NAME=nvidia
@@ -61,7 +61,7 @@ if [ "$HOSTNAME" = nidavellir ]; then
       exec Hyprland
     fi
 
-    if [[ -z $DISPLAY && $(tty) == /dev/tty2 && $XDG_SESSION_TYPE == tty ]]; then
+    if [[ -z $DISPLAY && $(tty) == /dev/tty4 && $XDG_SESSION_TYPE == tty ]]; then
       # Render everything on nvidia gpu, disable laptop screen
       export WLR_DRM_DEVICES=/dev/dri/card1:/dev/dri/card0
       export HYPR_ADDITIONAL_CONFIG=nidavellir-nvidia
