@@ -47,3 +47,4 @@ application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-ca
 application/rss+xml=thunderbird.desktop;userapp-Thunderbird.desktop;
 video/mp4=firefox.desktop;
 application/force-download=nvim.desktop;
+image/jxl=org.gnome.Loupe.desktop;
