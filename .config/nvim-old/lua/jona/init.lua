@@ -18,4 +18,3 @@ require("jona.commands")
 require("jona.packer")
 
 require("lvim.breadcrumbs").setup()
-
