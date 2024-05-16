@@ -74,6 +74,7 @@
             "car": "",
             "default": ["", "", ""]
         },
+	"max-length": 25,
         "on-click": "pavucontrol",
         "ignored-sinks": ["HDA NVidia Digital Stereo (HDMI)"]
 
