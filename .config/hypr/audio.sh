@@ -3,8 +3,13 @@
 SINK_A=alsa_output.usb-Kingston_HyperX_Cloud_II_Wireless_000000000001-00.iec958-stereo
 SINK_B=alsa_output.usb-Lenovo_ThinkPad_Thunderbolt_4_Dock_USB_Audio_000000000000-00.analog-stereo
 
-SINK_A_ID=83
-SINK_B_ID=58
+id_for_sink_name() {
+    local sink=$1
+    pactl list sinks | grep -C 2 "Name: $sink" | head -n1 | cut -d# -f2
+}
+
+SINK_A_ID=$(id_for_sink_name $SINK_A)
+SINK_B_ID=$(id_for_sink_name $SINK_B)
 
 # Function to count the number of sink inputs connected to a given sink
 count_inputs_on_sink() {

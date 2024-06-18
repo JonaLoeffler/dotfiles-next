@@ -22,7 +22,7 @@ then
     tmux new-window -t $session:$window -c $path -n 'docker'
     tmux send-keys -t $session:$window 'docker compose up -d' C-m 'docker compose run web npm install' C-m
 
-    cd $path && neovide .
+    cd $path && neovide . &
 fi
 
 tmux attach-session -t $session:1

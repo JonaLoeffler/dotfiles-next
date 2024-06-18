@@ -13,11 +13,11 @@ then
 
     window=1
     tmux rename-window -t $session:$window 'neovim'
-    tmux send-keys -t $session:$window 'nix-shell -I nixpkgs=channel:nixpkgs-unstable  -p gradle --command zsh' C-m 'nvim .' C-m
+    tmux send-keys -t $session:$window 'nix-shell -I nixpkgs=channel:nixpkgs-unstable -p gradle --command zsh' C-m 'cd server' C-m 'neovide . &' C-m 'nvim .' C-m
 
     window=2
     tmux new-window -t $session:$window -c "$path/server" -n 'docker'
-    tmux send-keys -t $session:$window 'nix-shell -I nixpkgs=channel:nixpkgs-unstable  -p gradle --command zsh' C-m 'neovide .' C-m 'docker compose up -d' C-m
+    tmux send-keys -t $session:$window 'docker compose up -d' C-m
 fi
 
 tmux attach-session -t $session:1
