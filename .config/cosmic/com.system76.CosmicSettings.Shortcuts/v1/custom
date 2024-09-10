@@ -1,0 +1,21 @@
+{
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "q",
+    ): Close,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Return",
+    ): System(Terminal),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "t",
+    ): System(Terminal),
+}
