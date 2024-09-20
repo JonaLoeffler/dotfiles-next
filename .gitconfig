@@ -6,7 +6,7 @@
 [pull]
 	rebase = true
 [core]
-	exlcludefile = /home/jona/.config/git/.gitignore
+	excludesFile = ~/.config/git/.gitignore
 [push]
 	autoSetupRemote = 1
 [url "git@gitlab.com:"]
