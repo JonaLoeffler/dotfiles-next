@@ -1,22 +1,22 @@
-import = ["/home/jona/.config/alacritty/alacritty-theme/themes/breeze.toml"]
+general.import = ["/home/jona/.config/alacritty/alacritty-theme/themes/breeze.toml"]
 
 [font]
 size = 13
 
 [font.bold]
-family = "Inconsolata Nerd Font"
+family = "Inconsolata"
 style = "Bold"
 
 [font.bold_italic]
-family = "Inconsolata Nerd Font"
+family = "Inconsolata"
 style = "BoldItalic"
 
 [font.italic]
-family = "Inconsolata Nerd Font"
+family = "Inconsolata"
 style = "Italic"
 
 [font.normal]
-family = "Inconsolata Nerd Font"
+family = "Inconsolata"
 style = "Regular"
 
 [font.offset]

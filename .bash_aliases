@@ -17,3 +17,5 @@ alias "gittag"="git tag --sort v:refname"
 
 alias nvim-old='NVIM_APPNAME="nvim-old" nvim'
 alias neovide-old='NVIM_APPNAME="nvim-old" neovide'
+
+alias cat=bat

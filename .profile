@@ -1,4 +1,6 @@
-. "$HOME/.cargo/env"
+if [ -d "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
+fi
 
 export XDG_CONFIG_HOME=$HOME/.config
 
@@ -8,3 +10,4 @@ alias vim=nvim
 
 export GTK_THEME=Adwaita-dark
 
+export XDG_CONFIG_HOME="$HOME/.config"
